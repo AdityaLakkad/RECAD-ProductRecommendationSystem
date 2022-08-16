@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+<body style="background: linear-gradient(48deg, rgb(245,0,0), rgb(255,245,0) 99%), rgb(164,83,83);">
+    <div class="container">
+        <div id="myModal" style="margin-top: 77px;">
+            <div class="modal-dialog modal-login">
+                <div class="modal-content" style="width: 350;">
+                    <div class="modal-header">
+                        <h4 class="h4 modal-title">Customer Information</h4>
+                    </div>
+                    <p style="text-align: center;">Before filling out the form take a look at the suggested output given below.</p>
+                    <div class="modal-body">
+                        <form action="{{ url_for('customerInfo') }}" method="POST">
+                            <div class="form-group"><input class="form-control form-control-lg" type="number" placeholder="Age" required="required" name="age"></div>
+                            <div class="form-group"><input class="form-control form-control-lg" type="text" placeholder="Gender Code" required="required" name="gendercode"></div>
+                            <div class="form-group"><input class="form-control form-control-lg" type="text" placeholder="Generation" required="required" name="generation"></div>
+                            <div class="form-group"><input class="form-control form-control-lg" type="text" placeholder="Postal Code" required="required" name="postalcode"></div>
+                            <div class="form-group"><input class="form-control form-control-lg" type="text" placeholder="Creditcard Type" required="required" name="creditcardtype"></div>
+                            <div class="text-center form-group" style="margin-top: 23px;">
+                                <button class="btn btn-primary btn-block btn-lg" type="submit" value="Login">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="width: 900px;background: rgba(249,245,245,0);color: rgb(0,0,0);text-align: center;">
+        <h1 style="font-size: 32px;margin-top: 59px;color: rgb(255,255,255);">Some points before filling the form</h1>
+        <p style="font-size: 16px;color: rgb(255,255,255);margin-bottom: 57px;">In the upper form usually we can fill any value.<br>But all values will not be useful as it can not be same as the data that we have trained our model on<br>So I suggest for better performance of the model please fill the value suggested<br>All the suggested balues are given below.<br></p>
+        <h1 style="font-size: 25px;margin-top: 0px;color: rgb(255,255,255);"><span style="text-decoration: underline;">Gender Code</span></h1>
+        <p style="font-size: 16px;color: rgb(255,255,255);">Suggested Inputs :<br>[ "Mr." , "Mrs." , "Miss." , "Master" ]&nbsp;<br></p>
+        <h1 style="font-size: 25px;margin-top: 0px;color: rgb(255,255,255);"><span style="text-decoration: underline;">Generation</span></h1>
+        <p style="font-size: 16px;color: rgb(255,255,255);">Suggested Inputs :<br>[ "Baby_Boomers" , "Gen_Y" , "Gen_Z" , "Gen_X" ]<br></p>
+        <h1 style="font-size: 25px;margin-top: 0px;color: rgb(255,255,255);"><span style="text-decoration: underline;">Postal Code</span></h1>
+        <p style="font-size: 16px;color: rgb(255,255,255);">Suggested Inputs :<br>Any Possible postal code of 5 char between 16018 (Minimum recorded)&nbsp; and 90103 (Maximum Recorded)</p>
+        <h1 style="font-size: 25px;margin-top: 0px;color: rgb(255,255,255);"><span style="text-decoration: underline;">Age</span></h1>
+        <p style="font-size: 16px;color: rgb(255,255,255);">Any valid integer between 10 to 100.</p>
+        <h1 style="font-size: 25px;margin-top: 0px;color: rgb(255,255,255);"><span style="text-decoration: underline;">Creditcard Type&nbsp;</span></h1>
+        <p style="font-size: 16px;color: rgb(255,255,255);">Suggested Inputs :<br>[ "American Express" , "Diners Club " , "Discover" , "JCB" , "VISA" , "Master Card" ]<br></p>
+    </div>
+{% endblock %}

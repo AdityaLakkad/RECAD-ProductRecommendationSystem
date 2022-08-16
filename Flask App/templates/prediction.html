@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+<body style="background: linear-gradient(48deg, rgb(245,0,0), rgb(255,245,0) 99%), rgb(164,83,83);">
+    <section class="photo-gallery" style="color: white; background-color: 0 !important;">
+        <div class="container">
+            <h2 class="display-2 text-center" style="margin-top: 35px;">Recommendations-Product Based</h2>
+            <div class="intro">
+                <p class="text-center">The recommendation given here is generated based on the products that you have bought..</p>
+            </div>
+        </div>
+    </section>
+    <div class="container" style="margin-bottom: 34px;">
+        <div class="row" style="margin-bottom: 24px;">
+            <div class="col-md-3">
+                <img src="/static/assets/img/{{items[0]}}.png" alt="">
+            </div>
+            <div class="col-md-3">
+                <img src="/static/assets/img/{{items[1]}}.png" alt="">
+            </div>
+            <div class="col-md-3">
+                <img src="/static/assets/img/{{items[2]}}.png" alt="">
+            </div>
+            <div class="col-md-3">
+                <img src="/static/assets/img/{{items[3]}}.png" alt="">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <img src="/static/assets/img/{{items[4]}}.png" alt="">
+            </div>
+            <div class="col-md-3">
+                <img src="/static/assets/img/{{items[5]}}.png" alt="">
+            </div>
+            <div class="col-md-3">
+                <img src="/static/assets/img/{{items[6]}}.png" alt="">
+            </div>
+            <div class="col-md-3">
+                <img src="/static/assets/img/{{items[7]}}.png" alt="">
+            </div>
+        </div>
+    </div>
+{% endblock %}
